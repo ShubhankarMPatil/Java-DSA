@@ -1,0 +1,30 @@
+public class Main
+{
+	public static void main(String[] args) {
+        String str = "123xyz";
+        int sum = 0;
+        int tempNum = 0; 
+        int multiplier = 1;
+        
+        for (int i = str.length() - 1; i > -1; i--) {
+            
+            if (Character.isDigit(str.charAt(i))) {
+                
+                int currentNum = Integer.parseInt(String.valueOf(str.charAt(i)));
+                tempNum += currentNum * multiplier;
+                multiplier *= 10;
+                System.out.println(tempNum);
+                
+            }
+            
+            else {
+                sum += tempNum;
+                multiplier = 1;
+                tempNum = 0;
+            }
+            
+        }
+        
+        System.out.println(sum += tempNum);
+	}
+}
